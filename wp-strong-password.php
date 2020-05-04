@@ -51,21 +51,27 @@ function wp_strong_pass_verify() {
 	$zxcvbn = new Zxcvbn();
 
 	foreach( $_SERVER["argv"] as $value ) {
-		if ( false !== stripos( $value, '--user_pass' ) ) {
-			$split_password_string = explode( '=', $value );
 
-			if ( ! empty( $split_password_string) && ! empty( $split_password_string[1] ) ) {
-				$strength = $zxcvbn->passwordStrength( $split_password_string[1] );
+		if ( false === stripos( $value, '--user_pass' ) ) {
+			continue;
+		}
 
-				if (
-					! empty( $strength ) &&
-					! empty( $strength['score'] ) &&
-					! in_array( $strength['score'], [4], true )
-				) {
-					WP_CLI::error( 'Weak password strictly prohibited.' );
-				}
-			}
+		$split_password_string = explode( '=', $value );
+
+		if ( empty( $split_password_string ) || empty( $split_password_string[1] ) ) {
+			continue;
+		}
+
+		$strength = $zxcvbn->passwordStrength( $split_password_string[1] );
+
+		if (
+			! empty( $strength ) &&
+			isset( $strength['score'] ) &&
+			! in_array( $strength['score'], [4], true )
+		) {
+			WP_CLI::error( 'Weak password strictly prohibited.' );
 		}
 	}
 }
 WP_CLI::add_hook( 'before_invoke:user update', 'wp_strong_pass_verify' );
+WP_CLI::add_hook( 'before_invoke:user create', 'wp_strong_pass_verify' );
