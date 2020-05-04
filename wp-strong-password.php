@@ -50,7 +50,13 @@ function wp_strong_pass_verify() {
 
 	$zxcvbn = new Zxcvbn();
 
-	foreach( $_SERVER["argv"] as $value ) {
+	if ( empty( $_SERVER['argv'] ) ) {
+		return;
+	}
+
+	$args = wp_unslash( $_SERVER['argv'] ); // phpcs:ignore
+
+	foreach ( $args as $value ) {
 
 		if ( false === stripos( $value, '--user_pass' ) ) {
 			continue;
@@ -67,7 +73,7 @@ function wp_strong_pass_verify() {
 		if (
 			! empty( $strength ) &&
 			isset( $strength['score'] ) &&
-			! in_array( $strength['score'], [4], true )
+			! in_array( $strength['score'], [ 4 ], true )
 		) {
 			WP_CLI::error( 'Weak password strictly prohibited.' );
 		}
