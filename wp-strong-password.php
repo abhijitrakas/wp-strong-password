@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: WordPress strong password
+ * Plugin Name: WP strong password
  * Plugin URI:  https://wordpress.org/plugins/wp-strong-password/
- * Description: Plugin to force user to use strong password. It works for WP_CLI and WordPress backend.
+ * Description: Plugin force user to use strong password. It works for WP_CLI and WordPress backend.
  * Version:     0.0.1
  * Author:      Abhijit Rakas
  * Author URI:  https://abhijitrakas.dev
