@@ -20,7 +20,6 @@ Creating new user with weak password
 
 Updating weak password from CLI
 
-`wp user update 2 --user_pass=hello`
 ![image](https://user-images.githubusercontent.com/26354653/85936814-baf38b00-b91b-11ea-9ec1-f1c45943cc04.png)
 
 Updating weak password from backend
