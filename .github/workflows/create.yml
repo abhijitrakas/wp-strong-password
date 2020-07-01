@@ -1,0 +1,18 @@
+name: Deploy to WordPress.org plugin directory
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: WordPress Plugin Deploy
+      uses: rtCamp/action-wordpress-org-plugin-deploy@master
+      env:
+        ASSETS_DIR: wpassets
+        EXCLUDE_LIST: webpack.config.js README.md package.json package-lock.json .gitignore .babelrc assets/src
+        SLUG: wp-strong-password
+        WORDPRESS_PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
+        WORDPRESS_USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
