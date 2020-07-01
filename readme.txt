@@ -4,7 +4,7 @@ Donate link: #
 Tags: wp-strong-password
 Requires at least: 5.0
 Tested up to: 5.4.0
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,9 @@ No for now.
 3. Updating weak password from backend.
 
 == Changelog ==
+= 0.0.2 =
+* Fix fatal error
+
 = 0.0.1 =
 * This is very first version of plugin
 
