@@ -12,7 +12,7 @@ jobs:
       uses: rtCamp/action-wordpress-org-plugin-deploy@master
       env:
         ASSETS_DIR: wpassets
-        EXCLUDE_LIST: webpack.config.js README.md package.json package-lock.json .gitignore .babelrc assets/src
+        EXCLUDE_LIST: README.md composer.json composer.lock .gitignore
         SLUG: wp-strong-password
         WORDPRESS_PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
         WORDPRESS_USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
