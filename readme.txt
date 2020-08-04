@@ -3,8 +3,8 @@ Contributors: abhijitrakas
 Donate link: #
 Tags: wp-strong-password
 Requires at least: 5.0
-Tested up to: 5.4.0
-Stable tag: 0.0.2
+Tested up to: 5.5
+Stable tag: 0.0.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -19,10 +19,6 @@ Plugin force user to use strong password. It works for WP_CLI and WordPress back
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
-
-= Can we add custom commands? =
-
-No for now.
 
 == Screenshots ==
 
